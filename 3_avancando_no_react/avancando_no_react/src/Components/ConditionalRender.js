@@ -7,7 +7,7 @@ const ConditionalRender = () => {
 
   const handleChangeName = () => {
     setName("João");
-  }
+  };
 
   return (
     <>
@@ -24,16 +24,15 @@ const ConditionalRender = () => {
         </p>
       )}
 
-        <h1>If ternario</h1>
+      <h1>If ternario</h1>
       {name === "João" ? (
         <p>O nome é {name}</p>
       ) : (
         <>
-            <p>O nome não é João, é {name}</p>
-            <button onClick={handleChangeName}>Alterar o nome para João</button>
+          <p>O nome não é João, é {name}</p>
+          <button onClick={handleChangeName}>Alterar o nome para João</button>
         </>
       )}
-
     </>
   );
 };
