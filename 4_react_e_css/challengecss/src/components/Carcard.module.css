@@ -1,0 +1,12 @@
+.card {
+    border: 3px solid white;
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 16px auto;
+    border-radius: 16px;
+}
+
+.card span {
+    font-weight: bold;
+}
