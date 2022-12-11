@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: "Ubuntu";
+  background-color: #282c34;
+  color: aliceblue;
+}
+
+ul {
+  list-style: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
