@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: "Ubuntu";
+  background-color: #282c34;
+  color: aliceblue;
+  text-align: center;
+}
+
+a {
+  color: deepskyblue;
+}
+
+a:hover {
+  color: dodgerblue;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
