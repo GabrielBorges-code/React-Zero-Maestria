@@ -26,6 +26,7 @@ export const useAuthentication = () => {
     }
   }
 
+  // register
   const createUser = async (data) => {
     checkIfIsCancell();
 
@@ -45,22 +46,54 @@ export const useAuthentication = () => {
 
       setLoading(false);
       return user;
-
     } catch (error) {
       let systemErrorMessage = "";
 
       if (error.message.includes("Password")) {
         systemErrorMessage = "A senha precisa ter pelo menos 6 caracteres";
-
       } else if (error.message.includes("email-already")) {
         systemErrorMessage = "E-mail já cadastrado";
-
       } else {
         systemErrorMessage = "Ocorreu um erro, por favor tenta mais tarde.";
-
       }
       setLoading(false);
-      setError(systemErrorMessage); 
+      setError(systemErrorMessage);
+    }
+  };
+
+  // logout
+  const logout = () => {
+    checkIfIsCancell();
+
+    signOut(auth);
+  };
+
+  // Sig in
+  const login = async (data) => {
+    checkIfIsCancell();
+
+    setLoading(true);
+    setError(false);
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      setLoading(false);
+
+    } catch (error) {
+      let systemErrorMessage;
+
+      if (error.message.includes("user-not-found")) {
+        systemErrorMessage = "Usuário não encontrado.";
+
+      } else if (error.message.includes("wrong-password")) {
+        systemErrorMessage = "Senha Incorreta.";
+
+      } else {
+        systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde.";
+
+      }
+
+      setError(systemErrorMessage);
+      setLoading(false);
     }
   };
 
@@ -73,5 +106,7 @@ export const useAuthentication = () => {
     createUser,
     error,
     loading,
+    logout,
+    login,
   };
 };
