@@ -10,6 +10,7 @@ import HookUseCallback from "./components/HookUseCallback";
 import HookUseMemo from "./components/HookUseMemo";
 import HookUseLayoutEffect from "./components/HookUseLayoutEffect";
 import HookUseImperativeHandle from "./components/HookUseImperativeHandle";
+import HookCustom from "./components/HookCustom";
 
 function App() {
   return (
@@ -47,6 +48,9 @@ function App() {
           <li>
             <Link to="/useimperativeHandle">useImperativeHandle</Link>
           </li>
+          <li>
+            <Link to="/customhook">customHook</Link>
+          </li>
         </ul>
         <HookUseContext>
           <Routes>
@@ -63,6 +67,7 @@ function App() {
               path="/useimperativeHandle"
               element={<HookUseImperativeHandle />}
             />
+            <Route path="/customhook" element={<HookCustom />} />
           </Routes>
         </HookUseContext>
       </BrowserRouter>
