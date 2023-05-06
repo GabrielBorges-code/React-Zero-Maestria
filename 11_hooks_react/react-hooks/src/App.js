@@ -5,6 +5,11 @@ import HookUseEffect from "./components/HookUseEffect";
 import HookUseReducer from "./components/HookUseReducer";
 import HookUseState from "./components/HookUseState";
 import { HookUseContext } from "./components/HookUseContext";
+import HookUseRef from "./components/HookUseRef";
+import HookUseCallback from "./components/HookUseCallback";
+import HookUseMemo from "./components/HookUseMemo";
+import HookUseLayoutEffect from "./components/HookUseLayoutEffect";
+import HookUseImperativeHandle from "./components/HookUseImperativeHandle";
 
 function App() {
   return (
@@ -13,7 +18,7 @@ function App() {
       <BrowserRouter>
         <ul className="menu-list">
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
@@ -27,14 +32,37 @@ function App() {
           <li>
             <Link to="/useeffect">useEffect</Link>
           </li>
+          <li>
+            <Link to="/useref">useRef</Link>
+          </li>
+          <li>
+            <Link to="/usecallback">useCallback</Link>
+          </li>
+          <li>
+            <Link to="/usememo">useMemo</Link>
+          </li>
+          <li>
+            <Link to="/uselayouteffect">useLayoutEffect</Link>
+          </li>
+          <li>
+            <Link to="/useimperativeHandle">useImperativeHandle</Link>
+          </li>
         </ul>
         <HookUseContext>
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/usestate" element={<HookUseState />} />
             <Route path="/usereducer" element={<HookUseReducer />} />
             <Route path="/useeffect" element={<HookUseEffect />} />
+            <Route path="/useref" element={<HookUseRef />} />
+            <Route path="/usecallback" element={<HookUseCallback />} />
+            <Route path="/usememo" element={<HookUseMemo />} />
+            <Route path="/uselayouteffect" element={<HookUseLayoutEffect />} />
+            <Route
+              path="/useimperativeHandle"
+              element={<HookUseImperativeHandle />}
+            />
           </Routes>
         </HookUseContext>
       </BrowserRouter>

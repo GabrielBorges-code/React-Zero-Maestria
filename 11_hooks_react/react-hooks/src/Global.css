@@ -8,3 +8,7 @@ body {
   justify-content: space-evenly;
   list-style: none;
 }
+
+.menu-list li {
+  margin-right: 12px;
+}
